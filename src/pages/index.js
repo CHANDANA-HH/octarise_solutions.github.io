@@ -19,16 +19,6 @@ export default function Home() {
     });
   }, []);
 
-  
-
-// Then inside the map:
-<Image
-  src={service.image}
-  alt={service.title}
-  width={500}  // Adjust as needed
-  height={300} // Adjust as needed
-  className="w-full h-48 object-cover mb-6 rounded-lg"
-/>
 
 
   return (
@@ -93,29 +83,34 @@ export default function Home() {
 
               {/* Service Card */}
               {[
-                {
-                  title: "Website Creation",
-                  desc: "We create modern, responsive, and user-friendly websites that elevate your brand.",
-                  image: "/website-creation.jpg"
-                },
-                {
-                  title: "Website Redesign",
-                  desc: "We breathe new life into outdated websites with modern designs and improved performance.",
-                  image: "/website-redesign.jpg"
-                }
-              ].map((service, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white p-8 rounded-xl shadow-lg transform hover:scale-[1.03] transition-transform duration-500 ease-in-out
-                  "
-                  data-aos="fade-up"
-                 
-                >
-                  <img src={service.image} alt={service.title} className="w-full h-48 object-cover mb-6 rounded-lg" />
-                  <h3 className="text-2xl font-semibold mb-3 text-gray-800">{service.title}</h3>
-                  <p className="text-gray-600">{service.desc}</p>
-                </div>
-              ))}
+  {
+    title: "Website Creation",
+    desc: "We create modern, responsive, and user-friendly websites that elevate your brand.",
+    image: "/website-creation.jpg"
+  },
+  {
+    title: "Website Redesign",
+    desc: "We breathe new life into outdated websites with modern designs and improved performance.",
+    image: "/website-redesign.jpg"
+  }
+].map((service, idx) => (
+  <div
+    key={idx}
+    className="bg-white p-8 rounded-xl shadow-lg transform hover:scale-[1.03] transition-transform duration-500 ease-in-out"
+    data-aos="fade-up"
+  >
+    <Image
+      src={service.image}
+      alt={service.title}
+      width={500}  // Adjust width as needed
+      height={300} // Adjust height as needed
+      className="w-full h-48 object-cover mb-6 rounded-lg"
+    />
+    <h3 className="text-2xl font-semibold mb-3 text-gray-800">{service.title}</h3>
+    <p className="text-gray-600">{service.desc}</p>
+  </div>
+))}
+
 
             </div>
           </div>

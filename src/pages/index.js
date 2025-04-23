@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import { useEffect } from 'react';
+import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -18,6 +19,18 @@ export default function Home() {
     });
   }, []);
 
+  
+
+// Then inside the map:
+<Image
+  src={service.image}
+  alt={service.title}
+  width={500}  // Adjust as needed
+  height={300} // Adjust as needed
+  className="w-full h-48 object-cover mb-6 rounded-lg"
+/>
+
+
   return (
     <>
       <Head>
@@ -30,7 +43,8 @@ export default function Home() {
 
         {/* Navbar Top Bar */}
         <div className="bg-black text-white text-center py-3 px-4 text-base md:text-lg font-medium tracking-wide">
-          <p>"Your online presence is the first impression of your business. Let's make it count."</p>
+        <p>&quot;Your online presence is the first impression of your business. Let&apos;s make it count.&quot;</p>
+
         </div>
 
         {/* Hero Section */}

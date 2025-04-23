@@ -1,10 +1,9 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-    "builds": [
+    "rewrites": [
       {
-        "src": "next.config.mjs",
-        "use": "@vercel/next"
+        "source": "/(.*)",
+        "destination": "/"
       }
-    }
+    ]
   }
   
